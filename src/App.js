@@ -12,7 +12,6 @@ export default function App() {
     api.get('/').then((res) => {
       const { data } = res.data;
       setSubjects(data);
-      console.log(subjects);
     });
   }, []);
   return (
