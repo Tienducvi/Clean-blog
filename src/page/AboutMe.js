@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../assets/img/home.jpg';
 
-function HomeHeader() {
+function AboutMe() {
   return (
     <>
       <header className="masthead" style={{ background: `url(${Home})` }}>
@@ -10,7 +10,7 @@ function HomeHeader() {
             <div className="col-md-10 col-lg-8 col-xl-7">
               <div className="site-heading">
                 <h1>Clean Blog</h1>
-                <span className="subheading">A Blog Theme by Start Bootstrap</span>
+                <span className="subheading">About Me</span>
               </div>
             </div>
           </div>
@@ -20,4 +20,4 @@ function HomeHeader() {
   );
 }
 
-export default HomeHeader;
+export default AboutMe;
