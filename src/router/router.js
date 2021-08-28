@@ -7,6 +7,8 @@ import {
 import NavBar from '../containers/NavBar';
 import Home from '../page/Home';
 import AboutMe from '../page/AboutMe';
+import SamplePost from '../page/SamplePost';
+import ContactMe from '../page/ContactMe';
 
 function Router() {
   return (
@@ -19,6 +21,12 @@ function Router() {
           </Route>
           <Route path="/about">
             <AboutMe />
+          </Route>
+          <Route path="/sample">
+            <SamplePost />
+          </Route>
+          <Route path="/contact">
+            <ContactMe />
           </Route>
         </Switch>
       </div>

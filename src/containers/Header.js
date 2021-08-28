@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Home from '../assets/img/home.jpg';
 
-function HomeHeader() {
+function HomeHeader({ bigTitle, smallTitle }) {
   return (
     <>
       <header className="masthead" style={{ background: `url(${Home})` }}>
@@ -9,8 +10,8 @@ function HomeHeader() {
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-10 col-lg-8 col-xl-7">
               <div className="site-heading">
-                <h1>Clean Blog</h1>
-                <span className="subheading">A Blog Theme by Start Bootstrap</span>
+                <h1>{bigTitle}</h1>
+                <span className="subheading">{smallTitle}</span>
               </div>
             </div>
           </div>
@@ -19,5 +20,10 @@ function HomeHeader() {
     </>
   );
 }
+
+HomeHeader.propTypes = {
+  bigTitle: PropTypes.string.isRequired,
+  smallTitle: PropTypes.string.isRequired,
+};
 
 export default HomeHeader;
