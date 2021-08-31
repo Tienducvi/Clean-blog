@@ -24,3 +24,18 @@ export default function NavBar() {
     </div>
   );
 }
+// function for NavBar
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('mainNav');
+  const st = window.pageYOffset || document.documentElement.scrollTop;
+  if (st > lastScrollTop) {
+    nav.classList.remove('is-fixed');
+    nav.classList.remove('is-visible');
+  } else {
+    nav.classList.add('is-fixed');
+    nav.classList.add('is-visible');
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
+}, false);

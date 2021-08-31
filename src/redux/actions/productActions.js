@@ -9,3 +9,8 @@ export const setApi = (data) => ({
   type: ActionTypes.SET_API,
   payload: data,
 });
+
+export const saveInfo = (user) => ({
+  type: ActionTypes.SAVE_ACTION,
+  payload: user,
+});

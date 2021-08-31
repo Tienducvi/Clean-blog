@@ -1,6 +1,10 @@
 import React from 'react';
 
 function ContactBody() {
+  function handleSubmit() {
+    // eslint-disable-next-line no-console
+    console.log(document.getElementById('name'.value));
+  }
   return (
     <main className="mb-4">
       <div className="container px-4 px-lg-5">
@@ -11,7 +15,7 @@ function ContactBody() {
               and I will get back to you as soon as possible!
             </p>
             <div className="my-5">
-              <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+              <form id="contactForm" onSubmit={handleSubmit()}>
                 <div className="form-floating">
                   <input className="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                   <label htmlFor="name">Name</label>
@@ -34,6 +38,7 @@ function ContactBody() {
                   <div className="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
                 </div>
                 <br />
+                <button className="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
               </form>
             </div>
           </div>
