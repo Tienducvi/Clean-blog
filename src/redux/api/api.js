@@ -22,9 +22,6 @@ export default function HomeBody() {
   return (
     <>
       <ExtractApi />
-      <div className="d-flex justify-content-end mb-4">
-        <a className="btn btn-primary text-uppercase" href="#!">Older Posts →</a>
-      </div>
     </>
   );
 }

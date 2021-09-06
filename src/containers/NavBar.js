@@ -29,8 +29,9 @@ let lastScrollTop = 0;
 
 window.addEventListener('scroll', () => {
   const nav = document.getElementById('mainNav');
+  const header = document.querySelector('.masthead');
   const st = window.pageYOffset || document.documentElement.scrollTop;
-  if (st > lastScrollTop) {
+  if (st > lastScrollTop || header.getBoundingClientRect().top === 0) {
     nav.classList.remove('is-fixed');
     nav.classList.remove('is-visible');
   } else {
