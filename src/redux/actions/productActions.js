@@ -14,3 +14,8 @@ export const saveInfo = (user) => ({
   type: ActionTypes.SAVE_ACTION,
   payload: user,
 });
+
+export const detailInfo = (post) => ({
+  type: ActionTypes.POST_DETAIL,
+  payload: post,
+});

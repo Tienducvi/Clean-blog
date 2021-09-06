@@ -1,20 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-  Link,
-  // useRouteMatch,
-} from 'react-router-dom';
-import Post from './Post';
+import { Link } from 'react-router-dom';
 
 function ExtractApi() {
-  // const { path, url } = useRouteMatch();
-  // // eslint-disable-next-line no-console
-  // console.log(url);
-  // // eslint-disable-next-line no-console
-  // console.log(useRouteMatch());
   const [post, setPost] = useState(4);
   const apiDatas = useSelector((state) => state.api.api);
   const renderList = apiDatas.slice(0, post).map((apiData) => {
@@ -34,7 +22,7 @@ function ExtractApi() {
           <div className="row gx-4 gx-lg-5 justify-content-center">
             <div className="col-md-10 col-lg-8 col-xl-7">
               <div key={id} className="post-preview">
-                <Link to={`/${id}`}><h2 className="post-title">{title}</h2></Link>
+                <Link to={`/post/${id}`}><h2 className="post-title">{title}</h2></Link>
                 <p className="post-meta">
                   Posted by
                   {' '}
@@ -53,16 +41,6 @@ function ExtractApi() {
             </div>
           </div>
         </div>
-
-        <BrowserRouter>
-          <div>
-            <Switch>
-              <Route path={`/:${id}`}>
-                <Post data={apiDatas} />
-              </Route>
-            </Switch>
-          </div>
-        </BrowserRouter>
       </>
     );
   });

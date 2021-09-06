@@ -3,4 +3,5 @@ export const ActionTypes = {
   SET_API: 'SET_API',
   SET_HEADER: 'SET_HEADER',
   SAVE_ACTION: 'SAVE_ACTION',
+  POST_DETAIL: 'POST_DETAIL',
 };

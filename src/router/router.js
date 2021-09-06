@@ -9,6 +9,7 @@ import Home from '../page/Home';
 import AboutMe from '../page/AboutMe';
 import SamplePost from '../page/SamplePost';
 import ContactMe from '../page/ContactMe';
+import PostDetail from '../containers/Post';
 
 function Router() {
   return (
@@ -28,6 +29,10 @@ function Router() {
           <Route path="/contact">
             <ContactMe />
           </Route>
+          <Route path="/post/:postId">
+            <PostDetail />
+          </Route>
+          <Route>404 Not Found!</Route>
         </Switch>
       </div>
     </BrowserRouter>
