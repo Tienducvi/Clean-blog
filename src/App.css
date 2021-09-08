@@ -11235,3 +11235,8 @@ header.masthead .site-heading .h1 {
     font-size: 2.25rem;
   }
 }
+.post-button {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}

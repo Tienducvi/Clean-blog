@@ -6,7 +6,7 @@ import { setApi } from '../actions/productActions';
 import ExtractApi from '../../containers/HomeList';
 
 const api = axios.create({
-  baseURL: 'https://js-post-api.herokuapp.com/api/posts?_litmit=10&_page=1%C6%B0',
+  baseURL: 'https://js-post-api.herokuapp.com/api/posts?',
 });
 
 export default function HomeBody() {
@@ -14,8 +14,7 @@ export default function HomeBody() {
   const dispatch = useDispatch();
   useEffect(() => {
     api.get('/').then((res) => {
-      const { data } = res.data;
-      setSubjects(data);
+      setSubjects(res?.data);
     });
   }, []);
   dispatch(setApi(subjects));

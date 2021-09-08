@@ -7,7 +7,6 @@ import {
 import NavBar from '../containers/NavBar';
 import Home from '../page/Home';
 import AboutMe from '../page/AboutMe';
-import SamplePost from '../page/SamplePost';
 import ContactMe from '../page/ContactMe';
 import PostDetail from '../containers/Post';
 
@@ -17,20 +16,17 @@ function Router() {
       <div>
         <NavBar />
         <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
           <Route path="/about">
             <AboutMe />
-          </Route>
-          <Route path="/sample">
-            <SamplePost />
           </Route>
           <Route path="/contact">
             <ContactMe />
           </Route>
           <Route path="/post/:postId">
             <PostDetail />
+          </Route>
+          <Route exact path="/">
+            <Home />
           </Route>
           <Route>404 Not Found!</Route>
         </Switch>

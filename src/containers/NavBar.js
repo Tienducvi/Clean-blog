@@ -15,7 +15,6 @@ export default function NavBar() {
             <ul className="navbar-nav ms-auto py-4 py-lg-0">
               <li className="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" to="/">Home</NavLink></li>
               <li className="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" to="/about">About</NavLink></li>
-              <li className="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" to="/sample">Sample Post</NavLink></li>
               <li className="nav-item"><NavLink className="nav-link px-lg-3 py-3 py-lg-4" to="/contact">Contact</NavLink></li>
             </ul>
           </div>
@@ -24,6 +23,7 @@ export default function NavBar() {
     </div>
   );
 }
+
 // function for NavBar
 let lastScrollTop = 0;
 
