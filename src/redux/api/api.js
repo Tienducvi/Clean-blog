@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import '../../App.css';
 import { useDispatch } from 'react-redux';
 import { setApi } from '../actions/productActions';
 import ExtractApi from '../../containers/HomeList';
-
-const api = axios.create({
-  baseURL: 'https://js-post-api.herokuapp.com/api/posts?',
-});
+import { api } from './apiCreate';
 
 export default function HomeBody() {
+  // eslint-disable-next-line no-console
   const [subjects, setSubjects] = useState([]);
   const dispatch = useDispatch();
   useEffect(() => {

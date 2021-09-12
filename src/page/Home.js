@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import HomeHeader from '../containers/Header';
 import HomeBody from '../redux/api/api';
 import FooterHome from '../containers/Footer';
+import Homepic from '../assets/img/homepic.jpg';
 
 function Home() {
   const headerData = useSelector((state) => state.header.headerData[0]);
@@ -11,7 +12,7 @@ function Home() {
   } = headerData;
   return (
     <>
-      <HomeHeader bigTitle={bigTitle} smallTitle={smallTitle} />
+      <HomeHeader bigTitle={bigTitle} smallTitle={smallTitle} picture={Homepic} />
       <HomeBody />
       <FooterHome />
     </>
