@@ -11240,3 +11240,7 @@ header.masthead .site-heading .h1 {
   gap: 20px;
   justify-content: flex-end;
 }
+.invalid-email {
+  color: red;
+  font-size: 1rem;
+}
