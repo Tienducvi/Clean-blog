@@ -11,7 +11,6 @@ export default function ListData() {
   const { search } = useLocation();
   const searchParam = new URLSearchParams(search);
   const page = searchParam.get('page');
-  console.log(page);
   // xong phan lay page number tu link
   // lay link api
   function pageNumber(pageNum) {
