@@ -24,12 +24,17 @@ function ContactBody() {
                 initialValues={{ firstName: '', lastName: '', email: '' }}
                 validationSchema={Yup.object({
                   name: Yup.string()
-                    .required(<div className="invalid-email">A name is required.</div>),
-                  email: Yup.string().email(<div className="invalid-email">Email is not valid.</div>).required(<div className="invalid-email">An email is required.</div>),
+                    .required('A name is required.')
+                    .min(2, 'Name is too short.')
+                    .max(30, 'Name is too long.'),
+                  email: Yup.string()
+                    .matches(/^[a-z0-9](\.?[a-z0-9]){5,}@g(oogle)?mail\.com$/, 'Email is not valid.')
+                    .required('An email is required.'),
                   phone: Yup.string()
-                    .required(<div className="invalid-email">A phone number is required.</div>),
+                    .matches(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/, 'Phone number is invalid')
+                    .required('A phone number is required.'),
                   message: Yup.string()
-                    .required(<div className="invalid-email">A message is required.</div>),
+                    .required('A message is required.'),
                 })}
                 onSubmit={(values, { setSubmitting }) => {
                   setTimeout(() => {
@@ -43,22 +48,30 @@ function ContactBody() {
                   <div className="form-floating">
                     <Field className="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
                     <label htmlFor="name">Name</label>
-                    <ErrorMessage name="name" />
+                    <div className="invalid-email">
+                      <ErrorMessage name="name" />
+                    </div>
                   </div>
                   <div className="form-floating">
                     <Field className="form-control" id="email" name="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
                     <label htmlFor="email">Email address</label>
-                    <ErrorMessage name="email" />
+                    <div className="invalid-email">
+                      <ErrorMessage name="email" />
+                    </div>
                   </div>
                   <div className="form-floating">
                     <Field className="form-control" id="phone" name="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
                     <label htmlFor="phone">Phone Number</label>
-                    <ErrorMessage name="phone" />
+                    <div className="invalid-email">
+                      <ErrorMessage name="phone" />
+                    </div>
                   </div>
                   <div className="form-floating">
                     <Field className="form-control" id="message" name="message" placeholder="Enter your message here..." style={{ height: '12rem' }} data-sb-validations="required" />
                     <label htmlFor="message">Message</label>
-                    <ErrorMessage name="message" />
+                    <div className="invalid-email">
+                      <ErrorMessage name="message" />
+                    </div>
                   </div>
                   <br />
                   <button className="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
